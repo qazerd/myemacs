@@ -1,0 +1,31 @@
+(add-to-list 'load-path "~/.emacs.d/elpa/ess-20161101.215/lisp")
+(require 'org)
+(require 'org-mobile-sync)
+(org-mobile-sync-mode 1)
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(require 'ox-reveal)
+(require 'ox-latex)
+(require 'ess-site)
+(byte-recompile-file
+     (expand-file-name "ob-R.el"
+                      (file-name-directory (locate-library "org")))
+     t)
+(require 'ob-R)
+(setq org-reveal-root "file:///home/bs/ownCloud/reveal/reveal.js")
+(setq org-latex-create-formula-image-program 'dvipng)
+;(setq org-mobile-directory "~/ownCloud/MobileOrg")
+(org-babel-do-load-languages
+   'org-babel-load-languages
+   '((R . t)
+     (org . t)
+     (ditaa . t)
+     (latex . t)
+     (dot . t)
+     (emacs-lisp . t)
+     (gnuplot . t)
+     (screen . nil)
+     (shell . t)
+     (sql . nil)
+     (sqlite . t))) 
+
