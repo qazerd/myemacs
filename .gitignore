@@ -1,0 +1,12 @@
+.mc-lists.el
+ac-comphist.dat
+auto-save-list/
+elpa/
+init.el~
+old/
+super-emacs/#org-init.el#
+super-emacs/key-bindings.el~
+super-emacs/misc.el~
+super-emacs/my-functions.el~
+super-emacs/packages.el~
+super-emacs/themes/
