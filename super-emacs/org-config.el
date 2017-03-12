@@ -11,10 +11,18 @@
 (define-key global-map "\C-cc" 'org-capture)
 
 (setq flyspell-issue-message-flag nil)
-(setq org-default-notes-file (concat org-directory "~/ownCloud/notes.org"))
-(setq org-mobile-directory "~/ownCloud/MobileOrg")
+(setq org-default-notes-file (concat org-directory "~/ownCloud/org/notes.org"))
+(setq org-agenda-files '("~/ownCloud/org/"))
+(setq org-mobile-directory "~/ownCloud/org")
 (setq org-confirm-babel-evaluate nil)   ;don't prompt me to confirm everytime I want to evaluate a block
+(defun air-pop-to-org-agenda (split)
+  "Visit the org agenda, in the current window or a SPLIT."
+  (interactive "P")
+  (org-agenda-list)
+  (when (not split)
+    (delete-other-windows)))
 
+(define-key global-map (kbd "C-c t a") 'air-pop-to-org-agenda)
 ;;; display/update images in the buffer after I evaluate
 ;; 3. ignore tex commands
 
