@@ -42,7 +42,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (ztree yasnippet which-key undo-tree theme-looper switch-window powerline ox-reveal ob-ipython neotree myterminal-controls multiple-cursors meta-presenter material-theme magit htmlize helm distinguished-theme dired-launch buffer-move auto-complete ace-jump-mode))))
+    (wc-mode wc-goal-mode ztree yasnippet which-key undo-tree theme-looper switch-window powerline ox-reveal ob-ipython neotree myterminal-controls multiple-cursors meta-presenter material-theme magit htmlize helm distinguished-theme dired-launch buffer-move auto-complete ace-jump-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -29,6 +29,7 @@
     ("C-S-<left>" . buf-move-left)
     ("C-S-<right>" . buf-move-right)
     ("C-x g" . magit-status)
+    ("C-c t a" . air-pop-to-org-agenda)
     ("<f5>" . super-emacs-reload-current-file)))
 (defun super-emacs-apply-keyboard-bindings (pair)
   "Apply keyboard-bindings for supplied list of key-pair values"

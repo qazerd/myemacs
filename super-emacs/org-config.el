@@ -25,16 +25,16 @@
          "* TODO %?
 SCHEDULED: %t"))))
 ; calling agenda
-(defun air-pop-to-org-agenda (split)
-  "Visit the org agenda, in the current window or a SPLIT."
-  (interactive "P")
-  (org-agenda-list)
-  (when (not split)
-    (delete-other-windows)))
+;(defun air-pop-to-org-agenda (split)
+;  "Visit the org agenda, in the current window or a SPLIT."
+;  (interactive "P")
+;  (org-agenda-list)
+ ; (when (not split)
+ ;   (delete-other-windows)))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(define-key global-map (kbd "C-c t a") 'air-pop-to-org-agenda)
+
 ;;; display/update images in the buffer after I evaluate
 ;; 3. ignore tex commands
 
@@ -43,28 +43,10 @@ SCHEDULED: %t"))))
 (defun flyspell-ignore-tex ()
   (interactive)
   (set (make-variable-buffer-local 'ispell-parser) 'tex))
+
 (add-hook 'org-mode-hook 'flyspell-ignore-tex)
 (add-hook 'org-mode-hook 'turn-on-org-cdlatex)
 (add-hook 'org-mode-hook 'wc-mode)
-
-
-
-
-                                        ;(setq reftex-default-bibliography 
-;  '("/Users/clarkdonley/Files/Academic/Bibliography/main.bib"))
-
-;(setq reftex-bibpath-environment-variables
-;  '("/Users/clarkdonley/Files/Academic/Bibliography/:/Users/clarkdonley/Files/Academic/Bibliography/"))
-
-;(setq reftex-bibpath-environment-variables
-;'("/Users/clarkdonley/Library/texmf/bibtex/bib"))
-;(setq reftex-default-bibliography '("/Users/clarkdonley/Files/Academic/Bibliography/main.bib"))
-;(setq reftex-bibliography-commands '("bibliography" "nobibliography" "addbibresource"))
-
-;(setq reftex-default-bibliography
-;      (quote
-;       ("user.bib" "local.bib" "main.bib")))
-
 (add-hook 'LaTeX-mode-hook 'turn-on-reftex)   ; with AUCTeX LaTeX mode
 (autoload 'reftex-mode     "reftex" "RefTeX Minor Mode" t)
 (autoload 'turn-on-reftex  "reftex" "RefTeX Minor Mode" nil)
