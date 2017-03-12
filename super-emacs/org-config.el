@@ -13,10 +13,20 @@
 (setq flyspell-issue-message-flag nil)
 (setq org-directory "~/ownCloud/org")
 (setq org-default-notes-file "~/ownCloud/org/notes.org")
-(setq org-agenda-files "~/ownCloud/org/todo.org")
-(setq org-mobile-directory "~/ownCloud/org")
+(setq org-agenda-files '("~/owncCloud/org/fromPerso.org" "~/owncCloud/org/fromPro.org" "~/owncCloud/org/mobileorg.org" "~/owncCloud/org/perso.org" "~/owncCloud/org/pro.org"))
+(setq org-mobile-directory "~/org/ownCloud")
 (setq org-confirm-babel-evaluate nil)   ;don't prompt me to confirm everytime I want to evaluate a block
-;capture templates
+
+; clalendrier
+(setq org-icalendar-timezone "Europe/paris")
+(setq org-caldav-url "https://webcloud.zaclys.com/remote.php/caldav/calendars/21366")
+(setq org-caldav-calendars
+  '((:calendar-id "personnel" :files ("~/ownCloud/org/perso.org")
+     :inbox "~/ownCloud/org/fromPerso.org")
+    (:calendar-id "professionel"
+     :files ("~/ownCloud/org/pro.org")
+     :inbox "~/ownCloud/org/fromPro.org")))
+                                         ;capture templates
 (setq org-capture-templates
       (quote
        (("t" "My TODO task format." entry

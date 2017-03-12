@@ -5,6 +5,8 @@
 ;Declare a list of required packages
 (defvar super-emacs--required-packages
   '(
+    org-bullets
+    org-caldav 
     wc-goal-mode
     wc-mode
     magit
