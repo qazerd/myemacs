@@ -9,7 +9,8 @@
 (add-hook 'org-mode-hook (lambda () (setq ispell-parser 'tex)))
 
 (define-key global-map "\C-cc" 'org-capture)
-
+(setq org-todo-keywords
+      '((sequence "TODO" "IN-PROGRESS" "WAITING" "|" "DONE" "CANCELED")))
 (setq flyspell-issue-message-flag nil)
 (setq org-default-notes-file (concat org-directory "~/ownCloud/org/notes.org"))
 (setq org-agenda-files '("~/ownCloud/org/"))
@@ -21,6 +22,8 @@
   (org-agenda-list)
   (when (not split)
     (delete-other-windows)))
+
+
 
 (define-key global-map (kbd "C-c t a") 'air-pop-to-org-agenda)
 ;;; display/update images in the buffer after I evaluate
