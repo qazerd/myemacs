@@ -12,10 +12,18 @@
 (setq org-todo-keywords
       '((sequence "TODO" "IN-PROGRESS" "WAITING" "|" "DONE" "CANCELED")))
 (setq flyspell-issue-message-flag nil)
-(setq org-default-notes-file (concat org-directory "~/ownCloud/org/notes.org"))
-(setq org-agenda-files '("~/ownCloud/org/"))
+(setq org-directory "~/ownCloud/org")
+(setq org-default-notes-file "~/ownCloud/org/notes.org")
+(setq org-agenda-files "~/ownCloud/org/todo.org")
 (setq org-mobile-directory "~/ownCloud/org")
 (setq org-confirm-babel-evaluate nil)   ;don't prompt me to confirm everytime I want to evaluate a block
+;capture templates
+(setq org-capture-templates
+      '(("t" "My TODO task format." entry
+         (file "todo.org")
+         "* TODO %?
+SCHEDULED: %t")))
+; calling agenda
 (defun air-pop-to-org-agenda (split)
   "Visit the org agenda, in the current window or a SPLIT."
   (interactive "P")
@@ -24,7 +32,7 @@
     (delete-other-windows)))
 
 
-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define-key global-map (kbd "C-c t a") 'air-pop-to-org-agenda)
 ;;; display/update images in the buffer after I evaluate
 ;; 3. ignore tex commands
@@ -118,16 +126,16 @@
  'org-babel-load-languages
  '(
    (ipython . t)
-   (R . t)
-   (org . t)
-   (ditaa . t)
-   (latex . t)
-   (dot . t)
-   (emacs-lisp . t)
-   (gnuplot . t)
-   (screen . nil)
-   (shell . t)
-   (sql . nil)
-   (sqlite . t)
+   ;(R . t)
+   ;(org . t)
+   ;(ditaa . t)
+   ;(latex . t)
+   ;(dot . t)
+   ;(emacs-lisp . t)
+   ;(gnuplot . t)
+   ;(screen . nil)
+   ;(shell . t)
+   ;(sql . nil)
+   ;(sqlite . t)
    ;; other languages..
    ))
