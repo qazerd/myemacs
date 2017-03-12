@@ -19,10 +19,11 @@
 (setq org-confirm-babel-evaluate nil)   ;don't prompt me to confirm everytime I want to evaluate a block
 ;capture templates
 (setq org-capture-templates
-      '(("t" "My TODO task format." entry
+      (quote
+       (("t" "My TODO task format." entry
          (file "todo.org")
          "* TODO %?
-SCHEDULED: %t")))
+SCHEDULED: %t"))))
 ; calling agenda
 (defun air-pop-to-org-agenda (split)
   "Visit the org agenda, in the current window or a SPLIT."
