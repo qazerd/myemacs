@@ -27,6 +27,8 @@
      :files ("~/ownCloud/org/pro.org")
      :inbox "~/ownCloud/org/fromPro.org")))
                                          ;capture templates
+(setq org-agenda-custom-commands
+  '(("P" ((tags "TIMESTAMP<=\"<now>\"")))))
 (setq org-capture-templates
       (quote
        (("t" "My TODO task format." entry
