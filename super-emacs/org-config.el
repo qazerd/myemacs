@@ -19,11 +19,11 @@
 
 ; clalendrier
 (setq org-icalendar-timezone "Europe/paris")
-(setq org-caldav-url "https://ncloud.zaclys.com/remote.php/caldav/calendars/21366")
+(setq org-caldav-url "https://ncloud.zaclys.com/remote.php/dav/calendars/21366/")
 (setq org-caldav-calendars
-  '((:calendar-id "personnel" :files ("~/ownCloud/org/perso.org")
+  '((:calendar-id "bertrand-simon-perso" :files ("~/ownCloud/org/perso.org")
      :inbox "~/ownCloud/org/fromPerso.org")
-    (:calendar-id "bertrandsimon-pro"
+    (:calendar-id "bertrand-simon-pro"
      :files ("~/ownCloud/org/pro.org")
      :inbox "~/ownCloud/org/fromPro.org")))
                                          ;capture templates
