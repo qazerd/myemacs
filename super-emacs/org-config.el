@@ -17,23 +17,24 @@
 (setq org-mobile-directory "~/org/ownCloud")
 (setq org-confirm-babel-evaluate nil)   ;don't prompt me to confirm everytime I want to evaluate a block
 
-; clalendrier
+                                        ; clalendrier
 (setq org-icalendar-timezone "Europe/paris")
 (setq org-caldav-url "https://ncloud.zaclys.com/remote.php/dav/calendars/21366/")
 (setq org-caldav-calendars
-  '((:calendar-id "bertrand-simon-perso" :files ("~/ownCloud/org/perso.org")
-     :inbox "~/ownCloud/org/fromPerso.org")
-    (:calendar-id "bertrand-simon-pro"
-     :files ("~/ownCloud/org/pro.org")
-     :inbox "~/ownCloud/org/fromPro.org")))
-                                         ;capture templates
+      '((:calendar-id "bertrand-simon-perso" :files ("~/ownCloud/org/perso.org")
+                      :inbox "~/ownCloud/org/fromPerso.org")
+        (:calendar-id "bertrand-simon-pro"
+                      :files ("~/ownCloud/org/pro.org")
+                      :inbox "~/ownCloud/org/fromPro.org")))
 (setq org-agenda-custom-commands
-  '(("P" ((tags "TIMESTAMP<=\"<now>\"")))))
+      '(("P" ((tags "TIMESTAMP<=\"<now>\"")))))
+                                        ;capture templates
 (setq org-capture-templates
       (quote
-       (("t" "My TODO task format." entry
-         (file "todo.org")
+       (("e" "A voir dans emacs" entry
+         (file "~/ownCloud/org/perso.org")
          "* TODO %?
+:emacs:
 SCHEDULED: %t"))))
 
 (setq org-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/")
@@ -43,16 +44,16 @@ SCHEDULED: %t"))))
  'org-babel-load-languages
  '(
    (ipython . t)
-   ;(R . t)
-   ;(org . t)
-   ;(ditaa . t)
-   ;(latex . t)
-   ;(dot . t)
-   ;(emacs-lisp . t)
-   ;(gnuplot . t)
-   ;(screen . nil)
-   ;(shell . t)
-   ;(sql . nil)
-   ;(sqlite . t)
+                                        ;(R . t)
+                                        ;(org . t)
+                                        ;(ditaa . t)
+                                        ;(latex . t)
+                                        ;(dot . t)
+                                        ;(emacs-lisp . t)
+                                        ;(gnuplot . t)
+                                        ;(screen . nil)
+                                        ;(shell . t)
+                                        ;(sql . nil)
+                                        ;(sqlite . t)
    ;; other languages..
    ))
