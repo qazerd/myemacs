@@ -23,7 +23,7 @@
 (setq org-caldav-calendars
   '((:calendar-id "personnel" :files ("~/ownCloud/org/perso.org")
      :inbox "~/ownCloud/org/fromPerso.org")
-    (:calendar-id "professionel"
+    (:calendar-id "bertrandsimon-pro"
      :files ("~/ownCloud/org/pro.org")
      :inbox "~/ownCloud/org/fromPro.org")))
                                          ;capture templates
