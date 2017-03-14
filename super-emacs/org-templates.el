@@ -1,28 +1,28 @@
 (setq org-capture-templates
       (quote
        (("e" "Improve my emacs" entry
-         (file "~/ownCloud/org/perso.org")
+         (file "~/ownCloud/org/todo.org")
          "* TODO %?
 :emacs:
 SCHEDULED: %t"))))
 (setq org-capture-templates
       (quote
        (("f" "Famille" entry
-         (file "~/ownCloud/org/perso.org")
+         (file "~/ownCloud/org/todo.org")
          "* TODO %?
 :famille:
 SCHEDULED: %t"))))
 (setq org-capture-templates
       (quote
        (("r" "Rugby" entry
-         (file "~/ownCloud/org/perso.org")
+         (file "~/ownCloud/org/todo.org")
          "* TODO %?
 :rugby:
 SCHEDULED: %t"))))
 (setq org-capture-templates
       (quote
        (("m" "Musique" entry
-         (file "~/ownCloud/org/perso.org")
+         (file "~/ownCloud/org/todo.org")
          "* TODO %?
 :musique:
 SCHEDULED: %t"))))
