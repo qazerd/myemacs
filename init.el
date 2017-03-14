@@ -20,7 +20,9 @@
 (load-file "~/.emacs.d/super-emacs/edit_tex.el")
 (load-file "~/.emacs.d/super-emacs/helm-config.el")
 (load-file "~/.emacs.d/super-emacs/org-config.el")
-;(load-file "~/.emacs.d/super-emacs/elpy-config.el")
+(load-file "~/.emacs.d/super-emacs/org-templates.el")
+
+                                        ;(load-file "~/.emacs.d/super-emacs/elpy-config.el")
 ;;; start yasnippet with emacs
 (require 'yasnippet)
 (yas-global-mode 1)
