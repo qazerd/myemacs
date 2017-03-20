@@ -8,36 +8,47 @@
 (add-hook 'org-babel-after-execute-hook 'org-display-inline-images 'append)
 (add-hook 'org-mode-hook (lambda () (setq ispell-parser 'tex)))
 
+(setq org-confirm-babel-evaluate nil)   ;don't prompt me to confirm everytime I want to evaluate a block
 (setq org-todo-keywords
       '((sequence "TODO" "IN-PROGRESS" "WAITING" "|" "DONE" "CANCELED")))
 (setq flyspell-issue-message-flag nil)
+
 (setq org-directory "~/ownCloud/org")
 (setq org-default-notes-file "~/ownCloud/org/notes.org")
-(setq org-agenda-files '("~/ownCloud/org/fromPerso.org" "~/ownCloud/org/fromPro.org" "~/ownCloud/org/mobileorg.org" "~/ownCloud/org/perso.org" "~/ownCloud/org/pro.org"))
-(setq org-mobile-directory "~/org/ownCloud")
-(setq org-confirm-babel-evaluate nil)   ;don't prompt me to confirm everytime I want to evaluate a block
+(setq org-agenda-files '(
+                         "~/ownCloud/org/fromPerso.org"
+                         "~/ownCloud/org/fromPro.org"
+                         "~/ownCloud/org/perso.org"
+                         "~/ownCloud/org/pro.org"
+                         "~/ownCloud/org/todo-pro.org"
+                         "~/ownCloud/org/todo-perso.org"
+                         "~/ownCloud/org/todo-famille.org"
+                         "~/ownCloud/org/todo-associations.org"
+                         )
+      )
+(setq org-icalendar-timezone "Europe/paris")
+(setq org-caldav-url "https://ncloud.zaclys.com/remote.php/dav/calendars/21366")
+(setq org-caldav-calendars
+
 
                                         ; clalendrier
-(setq org-icalendar-timezone "Europe/paris")
-(setq org-caldav-url "https://ncloud.zaclys.com/remote.php/dav/calendars/21366/")
-(setq org-caldav-calendars
-      '((:calendar-id "bertrand-simon-perso" :files ("~/ownCloud/org/perso.org")
+      '(
+        (:calendar-id "bertrand-simon-perso"
+                      :files ("~/ownCloud/org/perso.org")
                       :inbox "~/ownCloud/org/fromPerso.org")
         (:calendar-id "bertrand-simon-pro"
                       :files ("~/ownCloud/org/pro.org")
                       :inbox "~/ownCloud/org/fromPro.org")
-(:calendar-id "Perso"
-                      :files ("~/ownCloud/org/pro.org")
-                      :inbox "~/ownCloud/org/todo-perso.org")
-(:calendar-id "Famille"
-                      :files ("~/ownCloud/org/pro.org")
-                      :inbox "~/ownCloud/org/todo-famille.org")
-(:calendar-id "Pro"
-                      :files ("~/ownCloud/org/pro.org")
-                      :inbox "~/ownCloud/org/todo-pro.org")
-(:calendar-id "Associations"
-                      :files ("~/ownCloud/org/todo-asso.org")
-                              ))
+
+        (:calendar-id "pro"
+                      :files ("~/ownCloud/org/todo-pro.org"))
+        (:calendar-id "perso"
+                      :files ("~/ownCloud/org/todo-perso.org"))
+        (:calendar-id "famille"
+                      :files ("~/ownCloud/org/todo-famille.org"))
+        (:calendar-id "associations"
+                      :files ("~/ownCloud/org/todo-associations.org"))
+        ))
 (setq org-agenda-custom-commands
       '(("P" ((tags "TIMESTAMP<=\"<now>\"")))))
                                         ;capture templates
