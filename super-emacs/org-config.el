@@ -1,7 +1,6 @@
 (require 'ox-reveal)
 (require 'htmlize)
 (require 'ob-ipython)
-(require 'org-caldav)
 ;; 1. hook flyspell into org-mode
 (add-hook 'org-mode-hook 'flyspell-mode)
 (add-hook 'org-mode-hook 'flyspell-buffer)
@@ -59,6 +58,7 @@
         ))
 (setq org-agenda-custom-commands
       '(("P" ((tags "TIMESTAMP<=\"<now>\"")))))
+(require 'org-caldav)
                                         ;capture templates
 (setq org-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/")
 (setq org-reveal-mathjax t)
