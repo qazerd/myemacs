@@ -25,7 +25,19 @@
                       :inbox "~/ownCloud/org/fromPerso.org")
         (:calendar-id "bertrand-simon-pro"
                       :files ("~/ownCloud/org/pro.org")
-                      :inbox "~/ownCloud/org/fromPro.org")))
+                      :inbox "~/ownCloud/org/fromPro.org")
+(:calendar-id "Perso"
+                      :files ("~/ownCloud/org/pro.org")
+                      :inbox "~/ownCloud/org/todo-perso.org")
+(:calendar-id "Famille"
+                      :files ("~/ownCloud/org/pro.org")
+                      :inbox "~/ownCloud/org/todo-famille.org")
+(:calendar-id "Pro"
+                      :files ("~/ownCloud/org/pro.org")
+                      :inbox "~/ownCloud/org/todo-pro.org")
+(:calendar-id "Associations"
+                      :files ("~/ownCloud/org/todo-asso.org")
+                              ))
 (setq org-agenda-custom-commands
       '(("P" ((tags "TIMESTAMP<=\"<now>\"")))))
                                         ;capture templates

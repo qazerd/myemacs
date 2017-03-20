@@ -4,12 +4,11 @@
 
                                         ;Date du jour : mars 16 2017
 
-(setq data '(
-             ("Family" . family-capture)
-             ("Pro" . pro-capture)
-             ("Emacs" . emacs-capture)
-             ("perso" . perso-capture)
-))
+(setq data '(("Famille" . "john@email.com")
+             ("Personnel" . "jim@email.com")
+             ("Proessionnel" . "jane@email.com")
+             ("Temps libre" . "jill@email.com")))
+
 (setq some-helm-source
       `((name . "HELM at the Emacs")
         (candidates . ,data)
