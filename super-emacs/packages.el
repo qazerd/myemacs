@@ -6,7 +6,6 @@
 (defvar super-emacs--required-packages
   '(
     org-bullets
-    org-caldav 
     wc-goal-mode
     wc-mode
     magit
@@ -30,6 +29,7 @@
     which-key
     meta-presenter
     myterminal-controls
+    org-caldav 
     theme-looper))
 
 ;Install required packages
