@@ -18,11 +18,11 @@
 (setq org-caldav-save-directory "~/ownCloud/org")
 (setq org-directory "~/ownCloud/org")
 (setq org-default-notes-file "~/ownCloud/org/notes.org")
-;; (setq org-agenda-files (quote (
-;;                                "~/ownCloud/org/perso.org"
-;;                                "~/ownCloud/org/pro.org"
-;;                                "~/ownCloud/org/todo.org"
-;;                                 )))
+(setq org-agenda-files (quote (
+                               "~/ownCloud/org/perso.org"
+                               "~/ownCloud/org/pro.org"
+                               "~/ownCloud/org/todo.org"
+                                )))
 (setq org-caldav-files (quote (
                                "~/ownCloud/org/perso.org"
                                "~/ownCloud/org/pro.org"
