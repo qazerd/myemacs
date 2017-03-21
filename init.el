@@ -9,7 +9,7 @@
 
 (defvar super-emacs/invokation-time
   (current-time))
-
+(setq debug-on-error t)
 ;Load configuration files
 (load-file "~/.emacs.d/super-emacs/repositories.el")
 (load-file "~/.emacs.d/super-emacs/packages.el")
@@ -36,7 +36,11 @@
                        "Bonjour Bertrand SIMON!\n\n"
                        "Date du jour : "
                        (format-time-string "%B %d %Y"))
-       (get-buffer-create (current-buffer)))
+       (get-buffer-create (current-buffer)))Démarrage effectué en  217 seconds
+
+Bonjour Bertrand SIMON!
+
+Date du jour : mars 21 2017
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
