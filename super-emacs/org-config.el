@@ -14,11 +14,20 @@
       '((sequence "TODO" "IN-PROGRESS" "WAITING" "|" "DONE" "CANCELED")))
 (setq flyspell-issue-message-flag nil)
 
+;; configuration des calendriers ;;
+(setq org-caldav-save-directory "~/ownCloud/org")
 (setq org-directory "~/ownCloud/org")
 (setq org-default-notes-file "~/ownCloud/org/notes.org")
-(setq org-caldav-inbox "")
-(setq org-caldav-files "")
-(setq org-caldav-save-directory "~/ownCloud/org")
+(setq org-caldav-files (quote (
+                               "~/ownCloud/org/perso.org"
+                               "~/ownCloud/org/pro.org"
+                               "~/ownCloud/org/todo.org"
+                                )))
+(setq org-caldav-inbox (quote (
+                               "~/ownCloud/org/perso.org"
+                               "~/ownCloud/org/pro.org"
+                               "~/ownCloud/org/todo.org"
+                                )))
 (setq org-agenda-files (quote (
                                "~/ownCloud/org/perso.org"
                                "~/ownCloud/org/pro.org"
