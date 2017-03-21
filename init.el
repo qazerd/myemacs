@@ -21,6 +21,7 @@
 (load-file "~/.emacs.d/super-emacs/helm-config.el")
 (load-file "~/.emacs.d/super-emacs/org-config.el")
 (load-file "~/.emacs.d/super-emacs/org-templates.el")
+(load-file "~/.emacs.d/super-emacs/mu4e-config.el")
 
                                         ;(load-file "~/.emacs.d/super-emacs/elpy-config.el")
 ;;; start yasnippet with emacs
