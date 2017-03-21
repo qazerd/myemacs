@@ -1,7 +1,6 @@
 (require 'ox-reveal)
 (require 'htmlize)
 (require 'ob-ipython)
-
 ;; 1. hook flyspell into org-mode
 (add-hook 'org-mode-hook 'flyspell-mode)
 (add-hook 'org-mode-hook 'flyspell-buffer)
@@ -15,17 +14,26 @@
 
 (setq org-directory "~/ownCloud/org")
 (setq org-default-notes-file "~/ownCloud/org/notes.org")
-(setq org-agenda-files '(
-                         "~/ownCloud/org/fromPerso.org"
-                         "~/ownCloud/org/fromPro.org"
-                         "~/ownCloud/org/perso.org"
-                         "~/ownCloud/org/pro.org"
-                         "~/ownCloud/org/todo-pro.org"
-                         "~/ownCloud/org/todo-perso.org"
-                         "~/ownCloud/org/todo-famille.org"
-                         "~/ownCloud/org/todo-associations.org"
-                         )
-      )
+;; (defvar org-caldav-files  (quote (
+;;                                "~/ownCloud/org/fromPerso.org"
+;;                                "~/ownCloud/org/fromPro.org"
+;;                                "~/ownCloud/org/perso.org"
+;;                                "~/ownCloud/org/pro.org"
+;;                                "~/ownCloud/org/todo-pro.org"
+;;                                "~/ownCloud/org/todo-perso.org"
+;;                                "~/ownCloud/org/todo-famille.org"
+;;                                "~/ownCloud/org/todo-associations.org"
+;;                                )))
+(setq org-agenda-files (quote (
+                               "~/ownCloud/org/fromPerso.org"
+                               "~/ownCloud/org/fromPro.org"
+                               "~/ownCloud/org/perso.org"
+                               "~/ownCloud/org/pro.org"
+                               "~/ownCloud/org/todo-pro.org"
+                               "~/ownCloud/org/todo-perso.org"
+                               "~/ownCloud/org/todo-famille.org"
+                               "~/ownCloud/org/todo-associations.org"
+                               )))
 (setq org-icalendar-timezone "Europe/paris")
 (setq org-caldav-url "https://ncloud.zaclys.com/remote.php/dav/calendars/21366")
 (setq org-caldav-calendars
@@ -51,6 +59,7 @@
         ))
 (setq org-agenda-custom-commands
       '(("P" ((tags "TIMESTAMP<=\"<now>\"")))))
+(require 'org-caldav)
                                         ;capture templates
 (setq org-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/")
 (setq org-reveal-mathjax t)
