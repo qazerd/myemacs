@@ -36,11 +36,7 @@
                        "Bonjour Bertrand SIMON!\n\n"
                        "Date du jour : "
                        (format-time-string "%B %d %Y"))
-       (get-buffer-create (current-buffer)))Démarrage effectué en  217 seconds
-
-Bonjour Bertrand SIMON!
-
-Date du jour : mars 21 2017
+       (get-buffer-create (current-buffer)))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
