@@ -16,15 +16,8 @@
 
 (setq org-directory "~/ownCloud/org")
 (setq org-default-notes-file "~/ownCloud/org/notes.org")
-(setq org-caldav-inbox (quote( "~/ownCloud/org/perso.org"
-                               "~/ownCloud/org/pro.org"
-                               "~/ownCloud/org/todo.org"
-                              )))
-(setq org-caldav-files (quote (
-                               "~/ownCloud/org/perso.org"
-                               "~/ownCloud/org/pro.org"
-                               "~/ownCloud/org/todo.org"
-                               )))
+(setq org-caldav-inbox "")
+(setq org-caldav-files "")
 (setq org-caldav-save-directory org-directory)
 (setq org-agenda-files (quote (
                                "~/ownCloud/org/perso.org"
@@ -40,7 +33,7 @@
       '(
         (:calendar-id "bertrand-simon-perso"
                       :files ("~/ownCloud/org/perso.org")
-                      :inbox ("~/ownCloud/org/Perso.org"))
+                      :inbox ("~/ownCloud/org/perso.org"))
         (:calendar-id "bertrand-simon-pro"
                       :files ("~/ownCloud/org/pro.org")
                       :inbox ("~/ownCloud/org/Pro.org"))
