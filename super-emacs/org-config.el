@@ -16,8 +16,8 @@
 
 (setq org-directory "~/ownCloud/org")
 (setq org-default-notes-file "~/ownCloud/org/notes.org")
-(defvar org-caldav-inbox nil)
-(defvar org-caldav-files  nil)
+(setq org-caldav-inbox "")
+(setq org-caldav-files "")
 (setq org-agenda-files (quote (
                                "~/ownCloud/org/fromPerso.org"
                                "~/ownCloud/org/fromPro.org"
