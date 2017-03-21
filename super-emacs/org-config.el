@@ -16,16 +16,20 @@
 
 (setq org-directory "~/ownCloud/org")
 (setq org-default-notes-file "~/ownCloud/org/notes.org")
-(setq org-caldav-inbox "")
-(setq org-caldav-files "")
-(setq org-caldav-save-directory org-directory)
-(setq org-agenda-files (quote (
-                               "~/ownCloud/org/fromPerso.org"
-                               "~/ownCloud/org/fromPro.org"
+(setq org-caldav-inbox (quote( "~/ownCloud/org/perso.org"
+                               "~/ownCloud/org/pro.org"
+                               "~/ownCloud/org/todo.org"
+                              )))
+(setq org-caldav-files (quote (
                                "~/ownCloud/org/perso.org"
                                "~/ownCloud/org/pro.org"
                                "~/ownCloud/org/todo.org"
-                               "~/ownCloud/org/fromtodo.org"
+                               )))
+(setq org-caldav-save-directory org-directory)
+(setq org-agenda-files (quote (
+                               "~/ownCloud/org/perso.org"
+                               "~/ownCloud/org/pro.org"
+                               "~/ownCloud/org/todo.org"
                                 )))
 (setq org-icalendar-timezone "Europe/paris")
 (setq org-caldav-url "https://ncloud.zaclys.com/remote.php/dav/calendars/21366")
@@ -36,26 +40,26 @@
       '(
         (:calendar-id "bertrand-simon-perso"
                       :files ("~/ownCloud/org/perso.org")
-                      :inbox ("~/ownCloud/org/fromPerso.org"))
+                      :inbox ("~/ownCloud/org/Perso.org"))
         (:calendar-id "bertrand-simon-pro"
                       :files ("~/ownCloud/org/pro.org")
-                      :inbox ("~/ownCloud/org/fromPro.org"))
+                      :inbox ("~/ownCloud/org/Pro.org"))
 
         (:calendar-id "pro"
                       :files ("~/ownCloud/org/todo.org" "professionnel")
-                      :inbox ("~/ownCloud/org/fromtodo.org" "profesionnel"))
+                      :inbox ("~/ownCloud/org/todo.org" "profesionnel"))
         (:calendar-id "perso"
                       :files ("~/ownCloud/org/todo.org" "personnel")
-                      :inbox ("~/ownCloud/org/fromtodo.org" "personnel"))
+                      :inbox ("~/ownCloud/org/todo.org" "personnel"))
         (:calendar-id "famille"
                       :files ("~/ownCloud/org/todo.org" "famille")
-                      :inbox ("~/ownCloud/org/fromtodo.org" "famille"))
+                      :inbox ("~/ownCloud/org/todo.org" "famille"))
         (:calendar-id "emacs"
                       :files ("~/ownCloud/org/todo.org" "emacs")
-                      :inbox ("~/ownCloud/org/fromtodo.org" "emacs"))
+                      :inbox ("~/ownCloud/org/todo.org" "emacs"))
         (:calendar-id "associations"
                       :files ("~/ownCloud/org/todo.org" "associations")
-                      :inbox ("~/ownCloud/org/fromtodo.org" "associations"))              
+                      :inbox ("~/ownCloud/org/todo.org" "associations"))              
 ))
 (setq org-agenda-custom-commands
       '(("P" ((tags "TIMESTAMP<=\"<now>\"")))))
