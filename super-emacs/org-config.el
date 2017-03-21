@@ -18,6 +18,7 @@
 (setq org-default-notes-file "~/ownCloud/org/notes.org")
 (setq org-caldav-inbox "")
 (setq org-caldav-files "")
+(setq org-caldav-save-directory org-directory)
 (setq org-agenda-files (quote (
                                "~/ownCloud/org/fromPerso.org"
                                "~/ownCloud/org/fromPro.org"
@@ -37,20 +38,26 @@
       '(
         (:calendar-id "bertrand-simon-perso"
                       :files ("~/ownCloud/org/perso.org")
-                      :inbox "~/ownCloud/org/fromPerso.org")
+                      :inbox ("~/ownCloud/org/fromPerso.org"))
         (:calendar-id "bertrand-simon-pro"
                       :files ("~/ownCloud/org/pro.org")
-                      :inbox "~/ownCloud/org/fromPro.org")
+                      :inbox ("~/ownCloud/org/fromPro.org"))
 
         (:calendar-id "pro"
-                      :files ("~/ownCloud/org/todo-pro.org"))
-        (:calendar-id "perso"
-                      :files ("~/ownCloud/org/todo-perso.org"))
-        (:calendar-id "famille"
-                      :files ("~/ownCloud/org/todo-famille.org"))
-        (:calendar-id "associations"
-                      :files ("~/ownCloud/org/todo-associations.org"))
-        ))
+                      :files ("~/ownCloud/org/todo-pro.org")
+                      :inbox ("~/ownCloud/org/todo-pro.org"))
+      (:calendar-id "perso"
+                    :files ("~/ownCloud/org/todo-perso.org")
+                    :inbox ("~/ownCloud/org/todo-perso.org"))
+(:calendar-id "famille"
+                    :files ("~/ownCloud/org/todo-famille.org")
+                    :inbox ("~/ownCloud/org/todo-famille.org"))
+(:calendar-id "associations"
+              
+              :files ("~/ownCloud/org/todo-associations.org")
+                    :inbox ("~/ownCloud/org/todo-associations.org"))
+              
+))
 (setq org-agenda-custom-commands
       '(("P" ((tags "TIMESTAMP<=\"<now>\"")))))
 
