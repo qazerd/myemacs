@@ -16,16 +16,8 @@
 
 (setq org-directory "~/ownCloud/org")
 (setq org-default-notes-file "~/ownCloud/org/notes.org")
-(defvar org-caldav-files  (quote (
-                               "~/ownCloud/org/fromPerso.org"
-                               "~/ownCloud/org/fromPro.org"
-                               "~/ownCloud/org/perso.org"
-                               "~/ownCloud/org/pro.org"
-                               "~/ownCloud/org/todo-pro.org"
-                               "~/ownCloud/org/todo-perso.org"
-                               "~/ownCloud/org/todo-famille.org"
-                               "~/ownCloud/org/todo-associations.org"
-                               )))
+(defvar org-caldav-inbox nil)
+(defvar org-caldav-files  nil)
 (setq org-agenda-files (quote (
                                "~/ownCloud/org/fromPerso.org"
                                "~/ownCloud/org/fromPro.org"
