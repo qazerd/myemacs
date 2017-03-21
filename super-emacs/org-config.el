@@ -30,7 +30,7 @@
 
 
                                         ; clalendrier
-      '(
+      (quote(
         (:calendar-id "bertrand-simon-perso"
                       :files ("~/ownCloud/org/perso.org")
                       :inbox ("~/ownCloud/org/perso.org"))
@@ -52,8 +52,8 @@
                       :inbox ("~/ownCloud/org/todo.org" "emacs"))
         (:calendar-id "associations"
                       :files ("~/ownCloud/org/todo.org" "associations")
-                      :inbox ("~/ownCloud/org/todo.org" "associations"))              
-))
+                      :inbox ("~/ownCloud/org/todo.org" "associations"))
+        )))
 (setq org-agenda-custom-commands
       '(("P" ((tags "TIMESTAMP<=\"<now>\"")))))
 
