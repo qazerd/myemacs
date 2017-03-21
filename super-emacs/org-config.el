@@ -16,9 +16,9 @@
 
 (setq org-directory "~/ownCloud/org")
 (setq org-default-notes-file "~/ownCloud/org/notes.org")
-(setq org-caldav-inbox (quote("")))
-(setq org-caldav-files (quote("")))
-(setq org-caldav-save-directory org-directory)
+(setq org-caldav-inbox "")
+(setq org-caldav-files "")
+(setq org-caldav-save-directory "~/ownCloud/org")
 (setq org-agenda-files (quote (
                                "~/ownCloud/org/perso.org"
                                "~/ownCloud/org/pro.org"
@@ -26,10 +26,7 @@
                                 )))
 (setq org-icalendar-timezone "Europe/paris")
 (setq org-caldav-url "https://ncloud.zaclys.com/remote.php/dav/calendars/21366")
-(setq org-caldav-calendars
-
-
-                                        ; clalendrier
+(setq org-caldav-calendars  ; clalendriers
       (quote(
         (:calendar-id "bertrand-simon-perso"
                       :files ("~/ownCloud/org/perso.org")
