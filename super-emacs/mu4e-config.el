@@ -3,7 +3,7 @@
 (require 'mu4e)
 ;; default
 
-;; don't save message to Sent Messages, Gmail/IMAP takes care of this
+;; don't save message to Smu4eent Messages, Gmail/IMAP takes care of this
 (setq mu4e-sent-messages-behavior 'sent)
 
 ;; allow for updating mail using 'U' in the main view:
