@@ -1,5 +1,5 @@
 (add-to-list 'load-path "/usr/local/share/emacs/site-lisp/mu4e")
-(setq mu4e-mu-binary "/usr/local/share/emacs/site-lisp/mu4e")
+(setq mu4e-mu-binary "/usr/local/bin/mu")
 (require 'mu4e)
 ;; default
 
