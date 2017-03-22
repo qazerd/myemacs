@@ -42,28 +42,28 @@
 (setq org-caldav-url "https://ncloud.zaclys.com/remote.php/dav/calendars/21366")
 (setq org-caldav-calendars  ; clalendriers
       (quote(
-        (:calendar-id "bertrand-simon-perso"
-                      :files ("~/ownCloud/org/perso.org")
-                      :inbox ("~/ownCloud/org/perso.org"))
-        (:calendar-id "bertrand-simon-pro"
-                      :files ("~/ownCloud/org/pro.org")
-                      :inbox ("~/ownCloud/org/pro.org"))
+        ;; (:calendar-id "bertrand-simon-perso"
+        ;;               :files ("~/ownCloud/org/perso.org")
+        ;;               :inbox ("~/ownCloud/org/perso.org"))
+        ;; (:calendar-id "bertrand-simon-pro"
+        ;;               :files ("~/ownCloud/org/pro.org")
+        ;;               :inbox ("~/ownCloud/org/pro.org"))
 
         (:calendar-id "pro"
-                      :files ("~/ownCloud/org/todo.org" "professionnel")
-                      :inbox ("~/ownCloud/org/todo.org" "profesionnel"))
-        (:calendar-id "perso"
-                      :files ("~/ownCloud/org/todo.org" "personnel")
-                      :inbox ("~/ownCloud/org/todo.org" "personnel"))
-        (:calendar-id "famille"
-                      :files ("~/ownCloud/org/todo.org" "famille")
-                      :inbox ("~/ownCloud/org/todo.org" "famille"))
-        (:calendar-id "emacs"
-                      :files ("~/ownCloud/org/todo.org" "emacs")
-                      :inbox ("~/ownCloud/org/todo.org" "emacs"))
-        (:calendar-id "associations"
-                      :files ("~/ownCloud/org/todo.org" "associations")
-                      :inbox ("~/ownCloud/org/todo.org" "associations"))
+                      :files ("~/ownCloud/org/todo.org")
+                      :inbox ("~/ownCloud/org/todo.org"))
+        ;; (:calendar-id "perso"
+        ;;               :files ("~/ownCloud/org/todo.org" "personnel")
+        ;;               :inbox ("~/ownCloud/org/todo.org" "personnel"))
+        ;; (:calendar-id "famille"
+        ;;               :files ("~/ownCloud/org/todo.org" "famille")
+        ;;               :inbox ("~/ownCloud/org/todo.org" "famille"))
+        ;; (:calendar-id "emacs"
+        ;;               :files ("~/ownCloud/org/todo.org" "emacs")
+        ;;               :inbox ("~/ownCloud/org/todo.org" "emacs"))
+        ;; (:calendar-id "associations"
+        ;;               :files ("~/ownCloud/org/todo.org" "associations")
+        ;;               :inbox ("~/ownCloud/org/todo.org" "associations"))
         )))
 (setq org-agenda-custom-commands
       '(("P" ((tags "TIMESTAMP<=\"<now>\"")))))
