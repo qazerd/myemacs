@@ -10,6 +10,9 @@
 (defvar super-emacs/invokation-time
   (current-time))
 (setq debug-on-error t)
+
+;; load particular paths
+(add-to-list 'load-path "/usr/local/share/emacs/site-lisp/mu4e")
 ;Load configuration files
 (load-file "~/.emacs.d/super-emacs/repositories.el")
 (load-file "~/.emacs.d/super-emacs/packages.el")
