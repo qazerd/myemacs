@@ -4,6 +4,7 @@ auto-save-list/
 elpa/
 init.el~
 old/
+url/
 super-emacs/#org-init.el#
 super-emacs/key-bindings.el~
 super-emacs/misc.el~
