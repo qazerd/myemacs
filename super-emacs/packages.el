@@ -1,7 +1,7 @@
 ;Create repositories cache, if required
 (when (not package-archive-contents)
   (package-refresh-contents))
-
+(add-to-list 'load-path "~/.emacs.d/org-caldav")
 ;Declare a list of required packages
 (defvar super-emacs--required-packages
   '(
@@ -30,7 +30,7 @@
     which-key
     meta-presenter
     myterminal-controls
-    org-caldav 
+    ;org-caldav 
     theme-looper))
 
 ;Install required packages
