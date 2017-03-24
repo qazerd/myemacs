@@ -20,16 +20,15 @@
 (setq org-todo-keywords
       '((sequence "TODO" "IN-PROGRESS" "WAITING" "|" "DONE" "CANCELED")))
 (setq flyspell-issue-message-flag nil)
-
 ;; configuration des calendriers ;;
  (setq org-icalendar-timezone "Europe/paris")
- (setq org-caldav-url "https://webcloud.zaclys.com/remote.php/caldav/calendars/21366")
+ (setq org-caldav-url "https://ncloud.zaclys.com/remote.php/dav/calendars/21366")
  (setq org-caldav-calendars
    '((:calendar-id "bertrand-simon-perso" :files ("~/ownCloud/org/perso.org")
-      :inbox "~/ownCloud/org/fromPerso.org")
+      :inbox "~/ownCloud/org/fromperso.org")
      (:calendar-id "bertrand-simon-pro"
       :files ("~/ownCloud/org/pro.org")
-      :inbox "~/ownCloud/org/fromPro.org")))
+      :inbox "~/ownCloud/org/frompro.org")))
 (setq org-agenda-custom-commands
       '(("P" ((tags "TIMESTAMP<=\"<now>\"")))))
 
