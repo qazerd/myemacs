@@ -15,6 +15,9 @@
                                "~/ownCloud/org/perso.org"
                                "~/ownCloud/org/pro.org"
                                "~/ownCloud/org/todo.org"
+                               "~/ownCloud/org/fromperso.org"
+                               "~/ownCloud/org/frompro.org"
+                               "~/ownCloud/org/fromtodo.org"
                                 )))
 (setq org-confirm-babel-evaluate nil)   ;don't prompt me to confirm everytime I want to evaluate a block
 (setq org-todo-keywords
@@ -24,11 +27,17 @@
  (setq org-icalendar-timezone "Europe/paris")
  (setq org-caldav-url "https://ncloud.zaclys.com/remote.php/dav/calendars/21366")
  (setq org-caldav-calendars
-   '((:calendar-id "bertrand-simon-perso" :files ("~/ownCloud/org/perso.org")
-      :inbox "~/ownCloud/org/fromperso.org")
-     (:calendar-id "bertrand-simon-pro"
-      :files ("~/ownCloud/org/pro.org")
-      :inbox "~/ownCloud/org/frompro.org")))
+       '(
+         (:calendar-id "bertrand-simon-perso"
+                       :files ("~/ownCloud/org/perso.org")
+                       :inbox "~/ownCloud/org/fromperso.org")
+         (:calendar-id "bertrand-simon-pro"
+                      :files ("~/ownCloud/org/pro.org")
+                       :inbox "~/ownCloud/org/frompro.org")
+         (:calendar-id "associations"
+                       :files ("~/ownCloud/org/todo.org")
+                       :inbox "~/ownCloud/org/fromtodo.org")
+         ))
 (setq org-agenda-custom-commands
       '(("P" ((tags "TIMESTAMP<=\"<now>\"")))))
 
