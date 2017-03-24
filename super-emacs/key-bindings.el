@@ -1,5 +1,7 @@
 (defvar super-emacs--my-keyboard-bindings 
   '(
+    ("C-<f1>" . mu4e)
+    ("C-<f12>" . eval-buffer)
     ("\C-cc" . org-capture)
     ("C-<down>" . copy-current-line-under)
     ("C-<up>" . copy-current-line-above)
