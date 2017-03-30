@@ -2,7 +2,7 @@
 (require 'htmlize)
 (require 'ob-ipython)
 (require 'org-caldav)
-
+(require 'org-ref)
 ;; 1. hook flyspell into org-mode
 (add-hook 'org-mode-hook 'flyspell-mode)
 (add-hook 'org-mode-hook 'flyspell-buffer)
@@ -38,10 +38,26 @@
 (setq org-agenda-custom-commands
       '(("P" ((tags "TIMESTAMP<=\"<now>\"")))))
 
-                                        ;capture templates
+
+;; REVEAL
 (setq org-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/")
 (setq org-reveal-mathjax t)
 
+;;ORG-REF
+(setq reftex-default-bibliography '("~/ownCloud/bibliography/references.bib"))
+
+;; see org-ref for use of these variables
+(setq org-ref-bibliography-notes "~/ownCloud/bibliography/notes.org"
+      org-ref-default-bibliography '("~/ownCloud/bibliography/references.bib")
+      org-ref-pdf-directory "~/ownCloud/bibliography/bibtex-pdfs/")
+(setq bibtex-completion-bibliography "~/ownCloud/bibliography/references.bib"
+      bibtex-completion-library-path "~/ownCloud/bibliography/bibtex-pdfs"
+      bibtex-completion-notes-path "~/ownCloud/bibliography/helm-bibtex-notes")
+(setq bibtex-completion-pdf-open-function
+  (lambda (fpath)
+    (start-process "open" "*open*" "open" fpath)))
+
+;;LANGUAGES
 (org-babel-do-load-languages
  'org-babel-load-languages
  '(
