@@ -7,6 +7,7 @@
   '(
     ;mu4e
     helm-bibtex
+    helm-bibtexkey
     org-bullets
     wc-goal-mode
     wc-mode
