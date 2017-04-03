@@ -6,6 +6,7 @@
 (defvar super-emacs--required-packages
   '(
     ;mu4e
+    helm-bibtex
     org-bullets
     wc-goal-mode
     wc-mode
