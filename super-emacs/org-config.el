@@ -39,7 +39,8 @@
 (setq org-agenda-custom-commands
       '(("P" ((tags "TIMESTAMP<=\"<now>\"")))))
 
-                                        ;capture templates
+
+;; REVEAL
 (setq org-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/")
 (setq org-reveal-mathjax t)
                                         ; org-ref (see https://github.com/jkitchin/org-ref)
@@ -51,6 +52,8 @@
       bibtex-completion-library-path "~/ownCloud/bibliography/pdf"
       bibtex-completion-notes-path "~/ownCloud/bibliography/helm-bibtex-notes")
                                         ;org-babel
+;;LANGUAGES
+
 (org-babel-do-load-languages
  'org-babel-load-languages
  '(
