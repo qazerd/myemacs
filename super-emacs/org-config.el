@@ -2,6 +2,8 @@
 (require 'htmlize)
 (require 'ob-ipython)
 (require 'org-caldav)
+(require 'org-ref)
+
 ;; 1. hook flyspell into org-mode
 (add-hook 'org-mode-hook 'flyspell-mode)
 (add-hook 'org-mode-hook 'flyspell-buffer)
@@ -41,9 +43,17 @@
 ;; REVEAL
 (setq org-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/")
 (setq org-reveal-mathjax t)
-
-
+                                        ; org-ref (see https://github.com/jkitchin/org-ref)
+;; see org-ref for use of these variables
+(setq org-ref-bibliography-notes "~/ownCloud/bibliography/notes.org"
+      org-ref-default-bibliography '("~/ownCloud/bibliography/bibliography.bib")
+      org-ref-pdf-directory "~/ownCloud/bibliography/pdf/")
+(setq bibtex-completion-bibliography "~/ownCloud/bibliography/bibliography.bib"
+      bibtex-completion-library-path "~/ownCloud/bibliography/pdf"
+      bibtex-completion-notes-path "~/ownCloud/bibliography/helm-bibtex-notes")
+                                        ;org-babel
 ;;LANGUAGES
+
 (org-babel-do-load-languages
  'org-babel-load-languages
  '(

@@ -5,6 +5,8 @@
 ;Declare a list of required packages
 (defvar super-emacs--required-packages
   '(
+    ;;mu4e
+    org-ref
     ;mu4e
     helm-bibtex
     helm-bibtexkey
