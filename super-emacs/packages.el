@@ -5,7 +5,8 @@
 ;Declare a list of required packages
 (defvar super-emacs--required-packages
   '(
-    ;mu4e
+    ;;mu4e
+    org-ref
     org-bullets
     wc-goal-mode
     wc-mode
