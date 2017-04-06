@@ -3,6 +3,8 @@
 (require 'ob-ipython)
 (require 'org-caldav)
 (require 'org-ref)
+(require 'google-translate)
+(require 'google-translate-default-ui)
 
 ;; 1. hook flyspell into org-mode
 (add-hook 'org-mode-hook 'flyspell-mode)
