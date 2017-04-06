@@ -1,5 +1,7 @@
 (defvar super-emacs--my-keyboard-bindings 
   '(
+    ("C-<f3>" . google-translate-at-point)
+    ("C-S-<f3>" . google-translate-query-translate)
     ("C-<f1>" . mu4e)
     ("C-<f12>" . eval-buffer)
     ("\C-cc" . org-capture)
