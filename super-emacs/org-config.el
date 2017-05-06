@@ -43,7 +43,7 @@
 
 
 ;; REVEAL
-(setq org-reveal-root "file:////home/bs/program/reveal/reveal.js")
+(setq org-reveal-root "/home/bs/program/reveal/reveal.js")
 (setq org-reveal-mathjax t)
 
 ;; org-ref (see https://github.com/jkitchin/org-ref)
