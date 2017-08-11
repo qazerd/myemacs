@@ -4,13 +4,13 @@
       "super-emacs")
 
 ;Disable menu-bar
-(menu-bar-mode -1)
+(menu-bar-mode t)
 
 ;Disable tool-bar
 (tool-bar-mode -1)
 
 ;Disable scroll-bar
-(scroll-bar-mode -1)
+(scroll-bar-mode t)
 
 ;Activate material theme
 ;(load-theme 'material
@@ -19,3 +19,4 @@
 ;Set font
 (custom-set-faces
  '(default ((t (:height 120)))))
+(set-default-font "monospace-16")
