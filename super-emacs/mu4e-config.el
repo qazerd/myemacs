@@ -10,7 +10,7 @@
 (setq mu4e-mu-binary "/usr/local/bin/mu")
 (require 'mu4e)
 ;;location of my maildir
-(setq mu4e-maildir (expand-file-name "~/ownCloud/Maildir"))
+(setq mu4e-maildir (expand-file-name "~/mbsync"))
 ;; give me ISO(ish) format date-time stamps in the header list
 (setq  mu4e-headers-date-format "%Y-%m-%d %H:%M")
 ;;command used to get mail
