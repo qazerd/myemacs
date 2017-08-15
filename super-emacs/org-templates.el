@@ -1,73 +1,16 @@
-(setq org-capture-templates
-      (quote
-       (
-        ("e" "Improve my emacs" entry
-         (file "~/ownCloud/org/todo.org")
-         "* TODO %?
-:emacs:
-SCHEDULED: %t")
-        ("f" "Famille" entry
-         (file "~/ownCloud/org/todo.org")
-         "* TODO %?
-:famille:
-SCHEDULED: %t"
-        ))))
-
-;; (setq org-capture-templates
-;;       (quote
-;;        (
-;;         ("e" "Improve my emacs" entry
-;;          (file "~/ownCloud/org/todo.org")
-;;          "* TODO %?
-;; :emacs:
-;; SCHEDULED: %t")
-;;         )))
-;; (setq org-capture-templates
-;;       (quote
-;;        (("f" "Famille" entry
-;;          (file "~/ownCloud/org/todo.org")
-;;          "* TODO %?
-;; :famille:
-;; SCHEDULED: %t"))))
-;; (setq org-capture-templates
-;;       (quote
-;;        (("r" "Rugby" entry
-;;          (file "~/ownCloud/org/todo.org")
-;;          "* TODO %?
-;; :rugby:
-;; SCHEDULED: %t"))))
-;; (setq org-capture-templates
-;;       (quote
-;;        (("m" "Musique" entry
-;;          (file "~/ownCloud/org/todo.org")
-;;          "* TODO %?
-;; :musique:
-;; SCHEDULED: %t"))))
-;; (setq org-capture-templates
-;;       (quote
-;;        (("F" "Finances"     entry
-;;          (file "~/ownCloud/org/todo.org")
-;;          "* TODO %? :Finances: 
-;; SCEDULED: %t"))))
-;; (setq org-capture-templates
-;;       (quote
-;;        (("R" "Recherche"    entry
-;;          (file "~/ownCloud/org/todo.org")
-;;          "* TODO %? :Recherche: 
-;; SCHEDULED: %t"))))
-;; (setq org-capture-templates
-;;       (quote
-;;        (("a" "astro"        entry
-;;          (file "~/ownCloud/org/todo.org") "* TODO %? :astro: 
-;; SCHEDULED: %t"))))
-;; (setq org-capture-templates
-;;       (quote
-;;        (("m" "maison"       entry
-;;          (file "~/ownCloud/org/todo.org") "* TODO %? :maison: 
-;; SCHEDULED: %t"))))
-;; (setq org-capture-templates
-;;       (quote
-;;        (("d" "déménagement" entry
-;;          (file "~/ownCloud/org/todo.org")
-;;          "* TODO %? :déménagement: 
-;; SCHEDULED: %t"))))
+     (setq org-capture-templates
+           '(
+             ("e" "Improve my emacs" entry (file+headline "~/ownCloud/org/todo.org" "Emacs")
+              "** TODO %?\n  %i\n  %a")
+             ("f" "Famille (todo)" entry (file+headline "~/ownCloud/org/todo.org" "Famille")
+              "** TODO %?\n  %i\n  %a")
+             ("m" "Maison Todo" entry (file+headline "~/ownCloud/org/todo.org" "Maison")
+              "** TODO %?\n  %i\n  %a")
+             ("l" "Labo (todo)" entry (file+headline "~/ownCloud/org/todo.org" "Labo")
+              "** TODO %?\n  %i\n  %a")
+             ("t" "Enseignement (todo)" entry (file+headline "~/ownCloud/org/todo.org" "Teaching")
+              "** TODO %?\n  %i\n  %a")
+             ("b" "Labbook" entry (file+datetree "~/ownCloud/Documents/Labbook/labnotes.org")
+              "* %?\nEntered on %U\n  %i\n  %a")
+             )
+           )
