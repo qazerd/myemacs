@@ -47,11 +47,7 @@
 (setq org-default-notes-file "~/ownCloud/org/notes.org")
 (setq org-caldav-save-directory "~/ownCloud/org/")
 (setq org-agenda-files (quote (
-                               "~/ownCloud/org/perso.org"
-                               "~/ownCloud/org/pro.org"
                                "~/ownCloud/org/todo.org"
-                               "~/ownCloud/org/fromperso.org"
-                               "~/ownCloud/org/frompro.org"
                                 )))
 (setq org-confirm-babel-evaluate nil)   ;don't prompt me to confirm everytime I want to evaluate a block
 (setq org-todo-keywords
