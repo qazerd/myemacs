@@ -205,3 +205,4 @@
                     (cpb-mu4e-fm))
                    )))))
 
+(setq org-mu4e-link-query-in-headers-mode nil)

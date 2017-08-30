@@ -6,6 +6,7 @@
 (require 'google-translate)
 (require 'google-translate-default-ui)
 (require 'org-bullets)
+(require 'org-mu4e)
 ;; *. Beautifying emacs org-mode (https://zhangda.wordpress.com/2016/02/15/configurations-for-beautifying-emacs-org-mode/)
 ;; set the fall-back font
 ;; this is critical for displaying various unicode symbols, such as those used in my init-org.el settings
@@ -56,15 +57,15 @@
 ;; configuration des calendriers ;;
  (setq org-icalendar-timezone "Europe/paris")
  (setq org-caldav-url "https://ncloud.zaclys.com/remote.php/dav/calendars/21366")
- (setq org-caldav-calendars
-       '(
-         (:calendar-id "bertrand-simon-perso"
-                       :files ("~/ownCloud/org/perso.org")
-                       :inbox "~/ownCloud/org/fromperso.org")
-         (:calendar-id "bertrand-simon-pro"
-                      :files ("~/ownCloud/org/pro.org")
-                       :inbox "~/ownCloud/org/frompro.org")
-         ))
+ ;; (setq org-caldav-calendars
+ ;;       '(
+ ;;         (:calendar-id "bertrand-simon-perso"
+ ;;                       :files ("~/ownCloud/org/perso.org")
+ ;;                       :inbox "~/ownCloud/org/fromperso.org")
+ ;;         (:calendar-id "bertrand-simon-pro"
+ ;;                      :files ("~/ownCloud/org/pro.org")
+ ;;                       :inbox "~/ownCloud/org/frompro.org")
+ ;;         ))
 (setq org-agenda-custom-commands
       '(("P" ((tags "TIMESTAMP<=\"<now>\"")))))
 
