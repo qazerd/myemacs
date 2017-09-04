@@ -5,10 +5,12 @@
 ;Declare a list of required packages
 (defvar super-emacs--required-packages
   '(
+    interleave
     google-translate
     ;;mu4e
     org-ref
-    ;mu4e
+    ;org-mu4e
+    org-gcal
     helm-bibtex
     helm-bibtexkey
     org-bullets

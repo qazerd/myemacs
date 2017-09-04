@@ -1,7 +1,8 @@
 (require 'ox-reveal)
 (require 'htmlize)
 (require 'ob-ipython)
-(require 'org-caldav)
+;(require 'org-caldav)
+(require 'org-gcal)
 (require 'org-ref)
 (require 'google-translate)
 (require 'google-translate-default-ui)
@@ -48,26 +49,35 @@
 (setq org-default-notes-file "~/ownCloud/org/notes.org")
 (setq org-caldav-save-directory "~/ownCloud/org/")
 (setq org-agenda-files (quote (
+                               "~/ownCloud/org/gcal.org"
                                "~/ownCloud/org/todo.org"
+                               "~/ownCloud/org/schedule.org"
                                 )))
 (setq org-confirm-babel-evaluate nil)   ;don't prompt me to confirm everytime I want to evaluate a block
 (setq org-todo-keywords
       '((sequence "TODO" "IN-PROGRESS" "WAITING" "|" "DONE" "CANCELED")))
 (setq flyspell-issue-message-flag nil)
 ;; configuration des calendriers ;;
- (setq org-icalendar-timezone "Europe/paris")
- (setq org-caldav-url "https://ncloud.zaclys.com/remote.php/dav/calendars/21366")
- ;; (setq org-caldav-calendars
- ;;       '(
- ;;         (:calendar-id "bertrand-simon-perso"
- ;;                       :files ("~/ownCloud/org/perso.org")
- ;;                       :inbox "~/ownCloud/org/fromperso.org")
- ;;         (:calendar-id "bertrand-simon-pro"
- ;;                      :files ("~/ownCloud/org/pro.org")
- ;;                       :inbox "~/ownCloud/org/frompro.org")
- ;;         ))
+ (setq package-check-signature nil)
+
+
+(setq org-gcal-client-id "949586297211-efks3vf8m9rb5vavrl47earqg65t16ub.apps.googleusercontent.com"
+      org-gcal-client-secret "4ykiLGSST07WBMFzDj31NdEx"
+      org-gcal-file-alist '(("bertrand.simon@uha.fr" .  "~/ownCloud/org/gcal.org")))
+(setq org-agenda-files (list "~/ownCloud/org/gcal.org"
+			     "~/ownCloud/org/todo.org"
+			     "~/ownCloud/org/schedule.org"))
+
+(add-hook 'org-agenda-mode-hook (lambda () (org-gcal-sync) ))
+(add-hook 'org-capture-after-finalize-hook (lambda () (org-gcal-sync)))
+
+
 (setq org-agenda-custom-commands
       '(("P" ((tags "TIMESTAMP<=\"<now>\"")))))
+(setq org-agenda-custom-commands
+      '(("c" "Simple agenda view"
+	 ((agenda "")
+	  (alltodo "")))))
 
 
 ;; REVEAL

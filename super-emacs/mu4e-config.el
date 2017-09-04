@@ -17,7 +17,7 @@
 ;; use this for testing
 ;;(setq mu4e-get-mail-command "true")
 ;; use this to sync with mbsync
-(setq mu4e-get-mail-command "mbsync qazerd")
+(setq mu4e-get-mail-command "mbsync -a")
 
 ;; should mu4e use fancy utf characters? NO. they're ugly.
 (setq mu4e-use-fancy-chars 't)
@@ -40,7 +40,8 @@
 ;; to sign a mail: M-x mml-secure-sign-pgpmime
 (setq mml2015-use 'epg)
 (setq mu4e-user-mail-address-list '(
-                                    " bertrand.simon@qazerd.fr"
+                                    "bertrand.simon@institutoptique.fr"
+                                    "bertrand.simon@qazerd.fr"
                                     "bertrand.simon-asso@qazerd.fr"
                                     "bertrand.simon-finances@qazerd.fr"
                                     "bertrand.simon-lab@qazerd.fr"
@@ -110,10 +111,10 @@
 (defun cpb-mu4e-pro()
   (interactive)
   (message "professional mail account")
-  (setq  user-mail-address "bertrand.simon-lab@qazerd.fr"
+  (setq  user-mail-address "bertrand.simon@institutoptique.fr"
          mu4e-compose-signature (get-string-from-file "~/ownCloud/.signature.pro"))
   (mu4e~headers-jump-to-maildir "Inbox")
-  (mu4e-headers-search "bertrand.simon-lab@qazerd.fr")
+  (mu4e-headers-search "bertrand.simon-lab@qazerd.fr" "bertrand.simon@institutoptique.fr")
   )
 (defun cpb-mu4e-business()
   (interactive)
@@ -197,9 +198,9 @@
                    ((cpb-mu4e-is-message-to msg (list "bertrand.simon-finances@qazerd.fr"
                                                       "bs.billing@qazerd.fr"))
                     (cpb-mu4e-business))
-                   ((cpb-mu4e-is-message-to msg (list "bertrand.simon-lab@qazerd.fr"))
+                   ((cpb-mu4e-is-message-to msg (list "bertrand.simon-lab@qazerd.fr" "bertrand.Simon@institutoptique.fr"))
                     (cpb-mu4e-pro))
-                   ((cpb-mu4e-is-message-to msg "bertrand.simon-asso@qazerd.fr" "bs.social@qazerd.fr")
+                   ((cpb-mu4e-is-message-to msg (list "bertrand.simon-asso@qazerd.fr" "bs.social@qazerd.fr"))
                     (cpb-mu4e-social))
                    ((cpb-mu4e-is-message-to msg "bs.fm@qazerd.fr")
                     (cpb-mu4e-fm))
