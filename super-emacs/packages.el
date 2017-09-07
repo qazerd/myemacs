@@ -6,6 +6,8 @@
 (defvar super-emacs--required-packages
   '(
     bbdb
+    bbdb-vcard
+    bbdb-csv-import
     interleave
     google-translate
     ;;mu4e
