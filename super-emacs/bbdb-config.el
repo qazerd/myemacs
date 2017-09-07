@@ -34,23 +34,3 @@
     ;; http://flex.ee.uec.ac.jp/texi/bbdb/bbdb_11.html
 
     '(( "From" . "no.?reply\\|DAEMON\\|daemon\\|facebookmail\\|twitter")))
-)
-
-This will set up BBDB for you. I have commented the various settings; you can of course get more information for each of them by putting your cursor on them (in emacs) and issuing C-h v.
-
-INTEGRATION WITH E-MAIL CLIENTS
-
-Another important part is the integration with e-mail - which is why I am using BBDB in the first place.
-
-As I mentioned before, I am using the wonderful Wanderlust e-mail client for emacs, and you can easily integrate it with BBDB by putting the following in your .wl-file:
-
-(require 'bbdb-wl)
-(bbdb-wl-setup)
-
-;; i don't want to store addresses from my mailing folders
-(setq 
-  bbdb-wl-folder-regexp    ;; get addresses only from these folders
-  "^\.inbox$\\|^.sent")    ;; 
-
-
-(define-key wl-draft-mode-map (kbd "<C-tab>") 'bbdb-complete-name)
