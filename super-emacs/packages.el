@@ -5,6 +5,7 @@
 ;Declare a list of required packages
 (defvar super-emacs--required-packages
   '(
+    bbdb
     interleave
     google-translate
     ;;mu4e
