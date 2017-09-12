@@ -47,6 +47,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(doc-view-continuous t)
  '(package-selected-packages
    (quote
     (bbdb-csv-import bbdb-vcard bbdb org-gcal org-ref google-translate helm-bibtex helm-bibtexkey ztree yasnippet which-key wc-mode wc-goal-mode undo-tree theme-looper switch-window powerline ox-reveal org-caldav org-bullets ob-ipython neotree myterminal-controls multiple-cursors meta-presenter material-theme magit htmlize helm distinguished-theme dired-launch buffer-move auto-complete ace-jump-mode)))
