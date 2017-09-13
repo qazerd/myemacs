@@ -104,8 +104,8 @@
   (message "personal mail account")
   (setq  user-mail-address "bertrand.simon@qazerd.fr"
          mu4e-compose-signature (get-string-from-file "~/ownCloud/.signature.personal"))
-     (mu4e~headers-jump-to-maildir "Inbox")
-     (mu4e-headers-search (or "bertrand.simon@qazerd.fr" "famille.simon@qazerd.fr"))
+  ;   (mu4e~headers-jump-to-maildir "Inbox")
+ ;    (mu4e-headers-search (or "bertrand.simon@qazerd.fr" "famille.simon@qazerd.fr"))
      )
                                         ;
 (defun cpb-mu4e-pro()
@@ -113,32 +113,32 @@
   (message "professional mail account")
   (setq  user-mail-address "bertrand.simon@institutoptique.fr"
          mu4e-compose-signature (get-string-from-file "~/ownCloud/.signature.pro"))
-  (mu4e~headers-jump-to-maildir "Inbox")
-  (mu4e-headers-search "bertrand.simon-lab@qazerd.fr" "bertrand.simon@institutoptique.fr")
+  ;(mu4e~headers-jump-to-maildir "Inbox")
+ ; (mu4e-headers-search "bertrand.simon-lab@qazerd.fr" "bertrand.simon@institutoptique.fr")
   )
 (defun cpb-mu4e-business()
   (interactive)
   (message "business mail account")
   (setq  user-mail-address "bs.billing@qazerd.fr"
          mu4e-compose-signature (get-string-from-file "~/ownCloud/.signature.business"))
-    (mu4e~headers-jump-to-maildir "Inbox")
-    (mu4e-headers-search (or "bs.billing@qazerd.fr" "bertrand.simon-finances"))
+    ;(mu4e~headers-jump-to-maildir "Inbox")
+   ; (mu4e-headers-search (or "bs.billing@qazerd.fr" "bertrand.simon-finances"))
     )
 (defun cpb-mu4e-fm()
   (interactive)
   (message "F:.M:. mail account")
   (setq  user-mail-address "bs.fm@qazerd.fr"
          mu4e-compose-signature (get-string-from-file "~/ownCloud/.signature.fm"))
-   (mu4e~headers-jump-to-maildir "Inbox")
-   (mu4e-headers-search "bs.fm@qazerd.fr")
+   ;(mu4e~headers-jump-to-maildir "Inbox")
+  ; (mu4e-headers-search "bs.fm@qazerd.fr")
    )
 (defun cpb-mu4e-social()
   (interactive)
   (message "Social/asso mail account")
   (setq  user-mail-address "bs.social@qazerd.fr"
          mu4e-compose-signature (get-string-from-file "~/ownCloud/.signature.personal"))
-   (mu4e~headers-jump-to-maildir "Inbox")
-   (mu4e-headers-search (or "bertrand.simon-asso@qazerd.fr" "bs.social@qazerd.fr"))
+   ;(mu4e~headers-jump-to-maildir "Inbox")
+  ; (mu4e-headers-search (or "bertrand.simon-asso@qazerd.fr" "bs.social@qazerd.fr"))
    )
 ;;; quickly change account. got his idea from:
 ;;; https://github.com/skybert/my-little-friends/blob/master/emacs/.emacs.d/tkj-mu4e.el
