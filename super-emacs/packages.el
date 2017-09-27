@@ -40,7 +40,6 @@
     which-key
     meta-presenter
     myterminal-controls
-    ;org-caldav 
     theme-looper))
 
 ;Install required packages

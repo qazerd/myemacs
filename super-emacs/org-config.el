@@ -1,6 +1,7 @@
 (require 'ox-reveal)
 (require 'htmlize)
 (require 'ob-ipython)
+
 ;(require 'org-caldav)
 (require 'org-gcal)
 (require 'org-ref)
@@ -8,6 +9,8 @@
 (require 'google-translate-default-ui)
 (require 'org-bullets)
 (require 'org-mu4e)
+;(require 'org-latex)
+
 ;; *. Beautifying emacs org-mode (https://zhangda.wordpress.com/2016/02/15/configurations-for-beautifying-emacs-org-mode/)
 ;; set the fall-back font
 ;; this is critical for displaying various unicode symbols, such as those used in my init-org.el settings
@@ -49,6 +52,8 @@
 (setq org-default-notes-file "~/ownCloud/org/notes.org")
 (setq org-caldav-save-directory "~/ownCloud/org/")
 (setq org-agenda-files (quote (
+                               "~/ownCloud/Documents/Teachbook/teachnotes.org"
+                               "~/ownCloud/Documents/Labbook/labnotes.org"
                                "~/ownCloud/org/gcal.org"
                                "~/ownCloud/org/todo.org"
                                "~/ownCloud/org/schedule.org"
@@ -98,7 +103,7 @@
 
 
 ;;LANGUAGES
-
+  (with-eval-after-load 'org
 (org-babel-do-load-languages
  'org-babel-load-languages
  '(
@@ -112,8 +117,104 @@
                                         ;(emacs-lisp . t)
                                         ;(gnuplot . t)
                                         ;(screen . nil)
-                                        ;(shell . t)
+                                        (shell . t)
                                         ;(sql . nil)
                                         ;(sqlite . t)
    ;; other languages..
-   ))
+   )))
+(setq org-latex-pdf-process '("pdflatex -interaction nonstopmode %f" "biber %b" "pdflatex -interaction nonstopmode %f" "pdflatex -interaction nonstopmode --synctex=-1 %f"))
+(setq org-latex-create-formula-image-program 'imagemagick)
+(setq org-src-fontify-natively t
+      org-export-latex-listings t
+      org-export-latex-packages-alist 
+      '(("" "graphicx")
+	("" "longtable")
+	("" "wrapfig")
+	("" "soul")
+	("" "hyperref")
+	("latin1" "inputenc")
+	("a4" "")
+	("" "fancyheadings")
+	("" "palatino")
+	("frenchb" "babel")
+	("french" "varioref")
+	("" "float")
+	("" "lastpage")
+	("" "color")
+	("osf,sc" "mathpazo")
+	("" "MnSymbol")
+	("babel=true" "microtype")
+	("" "marvosym")))
+
+(setq org-export-latex-template 
+      "\\documentclass[a4paper,oneside]{scrartcl}
+\\oddsidemargin -0.5 cm
+\\evensidemargin -0.5 cm
+\\marginparwidth 0.0 in
+\\parindent 0.0 in
+\\topmargin -1.5 cm
+\\textheight 25.7 cm
+\\textwidth 17 cm
+\\advance\\headsep 2 ex
+\\advance\\textheight -2 cm
+\\renewcommand{\\baselinestretch}{1.14}
+\\addtolength{\\parskip}{1.2 ex}
+
+\\usepackage{color}
+\\usepackage{listings}
+\\usepackage{fancyheadings}}
+
+\\definecolor{lightgray}{RGB}{230,230,230}
+\\definecolor{orange}{RGB}{255,127,0}
+\\lstset{
+breaklines=true,
+breakindent=40pt,
+prebreak=\\raisebox {0 ex }[0 ex ][0 ex ]{ \\ensuremath { \\hookleftarrow }},
+basicstyle=\\ttfamily\\small,
+keywordstyle=\\color{black}\\bfseries\\underbar,
+identifierstyle=,
+stringstyle=\\color{orange},
+commentstyle=\\color{red},
+language=bash,
+backgroundcolor=\\color{lightgray},
+showstringspaces=false}
+
+\\lstdefinelanguage{diff}{
+  morecomment=[f][\\color{black}\\bfseries\\underbar]{diff},
+  morecomment=[f][\\color{blue}]{@@},
+  morecomment=[f][\\color{red}]-,
+  morecomment=[f][\\color{green}]+,
+  morecomment=[f][\\color{black}]{---},
+  morecomment=[f][\\color{black}]{+++},
+}
+\\fancyhf{}
+\\fancyhf[HRE,HLO]{\\leftmark}
+\\fancyhf[HLE,HRO]{\\includegraphics[width=2cm]{%s}}
+\\fancyhf[FLE,FLO]{\\bfseries \\THETITLE}
+\\fancyhf[FRE,FRO]{\\bfseries \\thepage/\\pageref*{LastPage}}
+
+\\pagestyle{fancy}
+\\linespread{1.05}
+
+\\def\\title#1{\\gdef\\@title{#1}\\gdef\\THETITLE{#1}}
+\\makeatletter
+\\renewcommand\\maketitle{
+  \\thispagestyle{empty}
+  \\begin{center}
+    \\includegraphics[width=8cm]{%s}\\par
+    {\\Huge \\bfseries \\THETITLE\\par}
+    {\\Large \\@author\\par}
+    {\\large \\@date\\par}
+  \\end{center}
+}
+\\makeatother")
+(setq org-export-latex-classes nil)
+(add-to-list 
+ 'org-export-latex-classes
+ `("IOGS"
+   ,(format org-export-latex-template "/home/bs/.emacs.d/super-emacs/imgs/IOGS.png" "/home/bs/.emacs.d/super-emacs/imgs/IOGS.png")
+   ("\\section{%s}" . "\\section*{%s}")
+   ("\\subsection{%s}" . "\\subsection*{%s}")
+   ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+   ("\\paragraph{%s}" . "\\paragraph*{%s}")
+   ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
