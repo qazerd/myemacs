@@ -2,8 +2,8 @@
 (require 'htmlize)
 (require 'ob-ipython)
 
-;(require 'org-caldav)
-(require 'org-gcal)
+(require 'org-caldav)
+;(require 'org-gcal)
 (require 'org-ref)
 (require 'google-translate)
 (require 'google-translate-default-ui)
@@ -54,10 +54,13 @@
 (setq org-agenda-files (quote (
                                "~/ownCloud/Documents/Teachbook/teachnotes.org"
                                "~/ownCloud/Documents/Labbook/labnotes.org"
-                               "~/ownCloud/org/gcal.org"
+                                        ;"~/ownCloud/org/gcal.org"
+                               
                                "~/ownCloud/org/todo.org"
                                "~/ownCloud/org/schedule.org"
-                                )))
+                               )))
+
+
 (setq org-confirm-babel-evaluate nil)   ;don't prompt me to confirm everytime I want to evaluate a block
 (setq org-todo-keywords
       '((sequence "TODO" "IN-PROGRESS" "WAITING" "|" "DONE" "CANCELED")))
@@ -65,16 +68,28 @@
 ;; configuration des calendriers ;;
  (setq package-check-signature nil)
 
+;;;; google calendars synchronisation
+;(setq org-gcal-client-id "949586297211-efks3vf8m9rb5vavrl47earqg65t16ub.apps.googleusercontent.com"
+;      org-gcal-client-secret "4ykiLGSST07WBMFzDj31NdEx"
+;      org-gcal-file-alist '(("bertrand.simon@uha.fr" .  "~/ownCloud/org/gcal.org")))
+;(add-hook 'org-agenda-mode-hook (lambda () (org-gcal-sync) ))
+;(add-hook 'org-capture-after-finalize-hook (lambda () (org-gcal-sync)))
+;(setq org-agenda-files (list "~/ownCloud/org/gcal.org"
+;                             "~/ownCloud/org/todo.org";
+;			     "~/ownCloud/org/schedule.org"))
+;
 
-(setq org-gcal-client-id "949586297211-efks3vf8m9rb5vavrl47earqg65t16ub.apps.googleusercontent.com"
-      org-gcal-client-secret "4ykiLGSST07WBMFzDj31NdEx"
-      org-gcal-file-alist '(("bertrand.simon@uha.fr" .  "~/ownCloud/org/gcal.org")))
-(setq org-agenda-files (list "~/ownCloud/org/gcal.org"
-			     "~/ownCloud/org/todo.org"
-			     "~/ownCloud/org/schedule.org"))
+;;;; Caldav synchronisation https://zimbra.u-psud.fr/home/bertrand.simon@u-psud.fr
+(setq org-caldav-calendars
+  '((:calendar-id "Tasks"
+     :url         "https://zimbra.u-psud.fr/home/bertrand.simon@u-psud.fr/Tasks"
+     :inbox       "~/ownCloud/org/todo.org"
+     :files       ("~/ownCloud/org/test.org"))
+    )
+)
 
-(add-hook 'org-agenda-mode-hook (lambda () (org-gcal-sync) ))
-(add-hook 'org-capture-after-finalize-hook (lambda () (org-gcal-sync)))
+
+
 
 
 (setq org-agenda-custom-commands
@@ -218,3 +233,5 @@ showstringspaces=false}
    ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
    ("\\paragraph{%s}" . "\\paragraph*{%s}")
    ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+;; org mindmap
+(load "/home/bs/.emacs.d/super-emacs/org-mind-map-master/org-mind-map.el")

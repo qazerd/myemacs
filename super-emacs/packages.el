@@ -5,6 +5,13 @@
 ;Declare a list of required packages
 (defvar super-emacs--required-packages
   '(
+    rtags 
+    ;irony-mode 
+    company-irony 
+    company-irony-c-headers
+    flycheck
+    flycheck-irony
+    cmake-ide 
     bbdb
     bbdb-vcard
     bbdb-csv-import

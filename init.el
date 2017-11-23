@@ -17,6 +17,7 @@
 (load-file "~/.emacs.d/super-emacs/repositories.el")
 (load-file "~/.emacs.d/super-emacs/packages.el")
 (load-file "~/.emacs.d/super-emacs/interface.el")
+(load-file "~/.emacs.d/super-emacs/auto-complete-conf.el")
 (load-file "~/.emacs.d/super-emacs/misc.el")
 (load-file "~/.emacs.d/super-emacs/my-functions.el")
 (load-file "~/.emacs.d/super-emacs/key-bindings.el")
@@ -26,7 +27,7 @@
 (load-file "~/.emacs.d/super-emacs/mu4e-config.el")
 (load-file "~/.emacs.d/super-emacs/org-config.el")
 (load-file "~/.emacs.d/super-emacs/org-templates.el")
-
+(load-file "~/.emacs.d/super-emacs/c++-config.el")
                                         ;(load-file "~/.emacs.d/super-emacs/elpy-config.el")
 ;;; start yasnippet with emacs
 (require 'yasnippet)
@@ -50,7 +51,7 @@
  '(doc-view-continuous t)
  '(package-selected-packages
    (quote
-    (bbdb-csv-import bbdb-vcard bbdb org-gcal org-ref google-translate helm-bibtex helm-bibtexkey ztree yasnippet which-key wc-mode wc-goal-mode undo-tree theme-looper switch-window powerline ox-reveal org-caldav org-bullets ob-ipython neotree myterminal-controls multiple-cursors meta-presenter material-theme magit htmlize helm distinguished-theme dired-launch buffer-move auto-complete ace-jump-mode)))
+    (interleave cmake-ide flycheck-irony flycheck company-irony-c-headers company-irony rtags bbdb-csv-import bbdb-vcard bbdb org-gcal org-ref google-translate helm-bibtex helm-bibtexkey ztree yasnippet which-key wc-mode wc-goal-mode undo-tree theme-looper switch-window powerline ox-reveal org-caldav org-bullets ob-ipython neotree myterminal-controls multiple-cursors meta-presenter material-theme magit htmlize helm distinguished-theme dired-launch buffer-move auto-complete ace-jump-mode)))
  '(send-mail-function nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
