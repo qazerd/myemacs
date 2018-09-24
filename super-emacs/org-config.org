@@ -1,3 +1,7 @@
+* Info
+  No use of calendar, email, capture for the moment
+* Required packages
+#+BEGIN_SRC emacs-lisp
 (require 'ox-reveal)
 (require 'htmlize)
 (require 'ob-ipython)
@@ -10,19 +14,35 @@
 ;(require 'org-mu4e)
 ;(require 'org-latex)
 (require 'org-protocol)
-
+#+END_SRC 
+* Org protocol
+#+BEGIN_SRC emacs-lisp
 (server-start)
-
+#+END_SRC
+* Beautify
+Beautifying emacs org-mode (https://zhangda.wordpress.com/2016/02/15/configurations-for-beautifying-emacs-org-mode/)
+** set the fall-back font
+this is critical for displaying various unicode symbols, such as those used in my init-org.el settings
+;; http://endlessparentheses.com/manually-choose-a-fallback-font-for-unicode.html
+#+BEGIN_SRC emacs-lisp
 (set-fontset-font "fontset-default" nil 
                   (font-spec :size 20 :name "Symbola"))
-
+#+END_SRC
+** Setting English Font
+#+BEGIN_SRC emacs-lisp
 (set-face-attribute
  'default nil :stipple nil :height 130 :width 'normal :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant 'normal :weight 'light :foundry "outline" :family "DejaVu Sans Mono for Powerline")
+#+END_SRC
 
+** disable CJK coding/encoding (Chinese/Japanese/Korean characters)
+#+BEGIN_SRC emacs-lisp
 (setq utf-translate-cjk-mode nil)
 (set-language-environment 'utf-8)
 (setq locale-coding-system 'utf-8)
+#+END_SRC
 
+** set the default encoding system
+#+BEGIN_SRC emacs-lisp
 (prefer-coding-system 'utf-8)
 (setq default-file-name-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
@@ -36,28 +56,65 @@
 
 ;; Treat clipboard input as UTF-8 string first; compound text next, etc.
 (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
+#+END_SRC
+** select org-bullet symbol set
+*** some ideas
+**** hexagrams
+     “✡” “⎈” “✽” “✲” “✱” “✻” “✼” “✽” “✾” “✿” “❀” “❁” “❂” “❃” “❄” “❅” “❆” “❇”
+**** circles
+     “○” “☉” “◎” “◉” “○” “◌” “◎” “●” “◦” “◯” “⚪” “⚫” “⚬” “❍” “￮” “⊙” “⊚” “⊛” “∙” “∘”
+**** special circles
+     “◐” “◑” “◒” “◓” “◴” “◵” “◶” “◷” “⚆” “⚇” “⚈” “⚉” “♁” “⊖” “⊗” “⊘”
+**** crosses
+     “✙” “♱” “♰” “☥” “✞” “✟” “✝” “†” “✠” “✚” “✜” “✛” “✢” “✣” “✤” “✥”
+**** poker sybmols
+     “♠” “♣” “♥” “♦” “♤” “♧” “♡” “♢”
+**** yinyang
+     “☯” “☰” “☱” “☲” “☳” “☴” “☵” “☶” “☷”
+**** special symbols
+     “☀” “♼” “☼” “☾” “☽” “☣” “§” “¶” “‡” “※” “✕” “△” “◇” “▶” “◀” “◈”
 
+*** Use =org-bullets= for utf8 symbols as org bullets
+#+BEGIN_SRC emacs-lisp
 (require 'org-bullets)
-
+#+END_SRC
+*** make available "org-bullet-face" such that I can control the font size individually
+#+BEGIN_SRC emacs-lisp
 (setq org-bullets-face-name (quote org-bullet-face))
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 ;; (setq org-bullets-bullet-list '("✙" "♱" "♰" "☥" "✞" "✟" "✝" "†" "✠" "✚" "✜" "✛" "✢" "✣" "✤" "✥"))
-
+#+END_SRC
+*** ellipsis
+#+BEGIN_SRC emacs-lisp
 (setq org-ellipsis " ➤➤➤")
-
+#+END_SRC
+* Hook flyspell into org-mode
+#+BEGIN_SRC emacs-lisp
 (add-hook 'org-mode-hook 'flyspell-mode)
 (add-hook 'org-mode-hook 'flyspell-buffer)
 (add-hook 'org-babel-after-execute-hook 'org-display-inline-images 'append)
 ;(add-hook 'org-mode-hook (lambda () (setq ispell-parser 'tex)))
-
+#+END_SRC
+* TODO Org classical config
+** Okular for PDF
+#+BEGIN_SRC emacs-lisp
 (setq org-file-apps (append '(("\\.pdf\\'" . "okular %s")) org-file-apps ))
-
+#+END_SRC
+* REVEAL
+#+BEGIN_SRC emacs-lisp
 (setq org-reveal-root "/home/bs/Applications/reveal/reveal.js")
 (use-package ox-reveal
 :ensure ox-reveal)
 (use-package htmlize
 :ensure t)
+#+END_SRC
 
+#+RESULTS:
+
+* Org-ref
+ org-ref (see https://github.com/jkitchin/org-ref)
+see org-ref for use of these variables
+#+BEGIN_SRC emacs-lisp
 (setq org-ref-bibliography-notes "~/ownCloud/Documents/Recherche/bibliography/notes.org"
       org-ref-default-bibliography '("~/ownCloud/Documents/Recherche/bibliography/my.bib")
       org-ref-default-bibliography '("~/ownCloud/Documents/Recherche/bibliography/my.bib")
@@ -65,7 +122,9 @@
 (setq bibtex-completion-bibliography "~/ownCloud/Documents/Recherche/bibliography/my.bib"
       bibtex-completion-library-path "~/ownCloud/Documents/Recherche/bibliography/pdf"
       bibtex-completion-notes-path "~/ownCloud/Documents/Recherche/bibliography/helm-bibtex-notes")
-
+#+END_SRC
+* org-Babel
+#+BEGIN_SRC emacs-lisp
 (with-eval-after-load 'org
 (org-babel-do-load-languages
 'org-babel-load-languages
@@ -86,6 +145,14 @@
 ;(sqlite . t)
    ;; other languages..
    )))
-
+#+END_SRC
+** ob-ipython specific configurations 
+#+BEGIN_SRC emacs-lisp
 (with-eval-after-load 'ob-ipython
   (setq org-babel-python-command "Users/user/anaconda3/bin/pythonw3"))
+#+END_SRC
+
+#+RESULTS:
+: Users/user/anaconda3/bin/pythonw3
+
+* org-pdf-latex

@@ -5,6 +5,7 @@
 ;Declare a list of required packages
 (defvar super-emacs--required-packages
   '(
+    use-package
     rtags 
     ;irony-mode 
     company-irony 
@@ -19,7 +20,8 @@
     google-translate
     ;;mu4e
     org-ref
-    ;org-mu4e
+    ein
+    ;;org-mu4e
     org-gcal
     helm-bibtex
     helm-bibtexkey
@@ -47,7 +49,11 @@
     which-key
     meta-presenter
     myterminal-controls
-    theme-looper))
+    theme-looper
+    elfeed
+    elfeed-org
+    elfeed-goodies
+    ))
 
 ;Install required packages
 (mapc (lambda (p)
